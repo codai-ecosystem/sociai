@@ -5,13 +5,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev -p 3006",
+    "dev": "next dev -p 4008",
     "build": "next build",
     "start": "next start -p 3006",
     "lint": "next lint",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "type-check": "tsc --noEmit"
+    "test": "jest --passWithNoTests",
+    "test:ui": "npx vitest ui",
+    "type-check": "tsc --noEmit",
+    "test:run": "vitest run",
+    "test:coverage": "vitest --coverage",
+    "test:watch": "jest --watch --passWithNoTests"
   },
   "dependencies": {
     "next": "^14.0.0",
@@ -28,8 +31,14 @@
   "devDependencies": {
     "eslint": "^8.0.0",
     "eslint-config-next": "^14.0.0",
-    "vitest": "^1.0.0",
-    "@vitejs/plugin-react": "^4.0.0"
+    "vitest": "^2.1.8",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@vitest/ui": "^2.1.8",
+    "@vitest/coverage-v8": "^1.2.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/jest-dom": "^6.1.0",
+    "jsdom": "^23.0.0",
+    "happy-dom": "^12.0.0"
   },
   "engines": {
     "node": ">=18.0.0",
